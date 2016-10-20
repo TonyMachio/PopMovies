@@ -4,6 +4,14 @@
     <!-- Actions -->
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Settings-->
+    <string name="pref_sort_label">Sort by...</string>
+    <string name="pref_sort_key" translatable="false">sort</string>
+    <string name="pref_sort_popular_label">Popular</string>
+    <string name="pref_sort_popular" translatable="false">popular</string>
+    <string name="pref_sort_rated_label">Most rated</string>
+    <string name="pref_sort_rated" translatable="false">top_rated</string>
+    <string name="title_activity_settings">Settings</string>
+
+
 </resources>

@@ -1,5 +1,6 @@
 package com.machio.tony.popmovies;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -32,8 +33,7 @@ public class MainActivity extends ActionBarActivity {
         int idOption =  item.getItemId();
 
         if(R.id.action_settings == idOption){
-            //TODO: Launch Settings activity
-            //startActivity(new Intent(this, SettingsActivity.class));
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
 
