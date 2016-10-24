@@ -17,7 +17,7 @@ public class MainActivity extends ActionBarActivity {
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new MoviesFragment())
+                    .add(R.id.container, new MainFragment())
                     .commit();
         }
     }

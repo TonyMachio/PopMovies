@@ -1,6 +1,7 @@
 package com.machio.tony.popmovies;
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.machio.tony.popmovies.adapters.Movie;
@@ -28,13 +30,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Arrays;
 
-public class MoviesFragment extends Fragment {
+public class MainFragment extends Fragment {
 
-    private final String LOG_TAG = MoviesFragment.class.getSimpleName();
+    private final String LOG_TAG = MainFragment.class.getSimpleName();
     private MovieArrayAdapter mMovieArrayAdapter;
     private GridView gridView;
 
-    public MoviesFragment() {
+    public MainFragment() {
     }
 
     @Override
@@ -51,13 +53,20 @@ public class MoviesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_movies, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         //Setear el adaptador
         gridView = (GridView) rootView.findViewById(R.id.gridview_movies);
 
         //Definir lanzamiento de actividad de detalle al hacer pulsar sobre un item de la grid
-
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Movie movie = (Movie)gridView.getItemAtPosition(position);
+                Intent detailIntent = new Intent(getActivity(), MovieDetailActivity.class).putExtra("MOVIE", movie);
+                startActivity(detailIntent);
+            }
+        });
 
         return rootView;
     }
