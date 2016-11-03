@@ -6,39 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".MovieDetailActivity">
 
+    <TextView
+        android:id="@+id/detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="?attr/actionModeSplitBackground"
+        android:textColor="@android:color/background_light"
+        android:textStyle="normal|bold"
+        />
+
     <ImageView
         android:id="@+id/detail_poster"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_title"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"/>
+
     <TextView
-        android:id="@+id/detail_title"
+        android:id="@+id/detail_release_date_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/detail_poster"
-        android:text="dasdasd"/>
+        android:layout_toRightOf="@id/detail_poster"
+        android:layout_below="@id/detail_title"
+        android:text="@string/detail_release_date_label"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
+        android:textStyle="normal|italic" />
     <TextView
         android:id="@+id/detail_release_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dasdasd"
-        android:layout_below="@id/detail_title"/>
+        android:layout_below="@id/detail_title"
+        android:layout_toRightOf="@id/detail_release_date_label"/>
+
+    <TextView
+        android:id="@+id/detail_original_title_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_release_date_label"
+        android:layout_toRightOf="@id/detail_poster"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/detail_original_title_label"
+        android:textStyle="normal|italic"/>
     <TextView
         android:id="@+id/detail_original_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dasdasd"
-        android:layout_below="@id/detail_release_date"/>
+        android:paddingBottom="8dp"
+        android:layout_toRightOf="@id/detail_original_title_label"
+        android:layout_below="@id/detail_release_date_label"/>
+
     <TextView
-        android:id="@+id/detail_overview"
+        android:id="@+id/detail_rating_bar_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dasdasd"
+        android:layout_below="@id/detail_original_title"
+        android:layout_toRightOf="@id/detail_poster"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/detail_rating_bar_label"
+        android:textStyle="normal|italic"/>
+    <TextView
+        android:id="@+id/detail_rating_bar_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/detail_rating_bar_label"
         android:layout_below="@id/detail_original_title"/>
+
     <RatingBar
         android:id="@+id/detail_rating_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:clickable="false"/>
+        android:isIndicator="true"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_below="@+id/detail_rating_bar_value"
+        android:layout_toRightOf="@id/detail_poster"
+        android:numStars="10" />
+    <TextView
+        android:id="@+id/detail_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_poster"/>
 
 </RelativeLayout>

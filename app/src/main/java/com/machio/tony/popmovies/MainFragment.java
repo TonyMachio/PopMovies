@@ -200,7 +200,7 @@ public class MainFragment extends Fragment {
                 resultMovies[i] = new Movie(
                         movie.getString(TMDB_TITLE),
                         movie.getString(TMDB_ORIGINAL_TITLE),
-                        movie.getString(TMDB_RELEASE_DATE),
+                        movie.getString(TMDB_RELEASE_DATE).substring(0,4),
                         movie.getString(TMDB_OVERVIEW),
                         Double.parseDouble(movie.getString(TMDB_USER_RATING)),
                         POSTER_BASE_URL + movie.getString(TMDB_POSTER));

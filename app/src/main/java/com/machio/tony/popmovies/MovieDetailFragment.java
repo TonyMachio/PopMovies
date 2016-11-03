@@ -38,7 +38,8 @@ public class MovieDetailFragment extends Fragment {
             ((TextView)rootView.findViewById(R.id.detail_overview)).setText(movie.getOverview());
             Picasso.with(rootView.getContext()).load(movie.getPoster())
                     .into((ImageView) rootView.findViewById(R.id.detail_poster));
-            ((RatingBar)rootView.findViewById(R.id.detail_rating_bar)).setRating((float)(movie.getUserAverage()* 0.5));
+            ((TextView)rootView.findViewById(R.id.detail_rating_bar_value)).setText(Double.toString(movie.getUserAverage()));
+            ((RatingBar)rootView.findViewById(R.id.detail_rating_bar)).setRating((float)(movie.getUserAverage()));
         }
 
         return rootView;

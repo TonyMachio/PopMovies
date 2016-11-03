@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.machio.tony.popmovies.R;
 import com.squareup.picasso.Picasso;
@@ -41,6 +42,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
 
         Picasso.with(context).load(movieItem.getPoster()).into(
                 (ImageView) viewLayout.findViewById(R.id.poster_grid));
+        ((TextView)viewLayout.findViewById(R.id.rating_grid)).setText(Double.toString(movieItem.getUserAverage()));
 
         return viewLayout;
     }
